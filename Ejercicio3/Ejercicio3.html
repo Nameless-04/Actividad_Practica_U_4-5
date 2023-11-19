@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Instrucciones:</h1>
+    <p>
+        Este formulario te ayudará a calcular tu Índice de Masa Corporal (IMC) y te ofrecerá un platillo sugerido
+        y una rutina de ejercicio basado en tu resultado. Por favor, completa todos los campos requeridos.
+    </p>
+    
+    <form id="imcForm" action="javascript:calculateIMC()">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required><br><br>
+        
+        <label for="alergias">Alergias:</label>
+        <input type="text" id="alergias"><br><br>
+        
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" required><br><br>
+        
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" required><br><br>
+        
+        <button type="submit">Calcular</button>
+    </form>
+    
+    <div id="resultContainer" style="display: none">
+        <h2>Resultado:</h2>
+        <p id="imcResult"></p>
+        <p id="suggestedDish"></p>
+        <p id="exerciseRoutine"></p>
+    </div>
+
+    <script>
+        function calculateIMC() {
+            var edad = document.getElementById("edad").value;
+            var alergias = document.getElementById("alergias").value;
+            var peso = document.getElementById("peso").value;
+            var altura = document.getElementById("altura").value;
+
+            var imc = peso / ((altura/100) * (altura/100));
+            var imcResult = "Tu índice de masa corporal (IMC) es " + imc.toFixed(2) + ".";
+            var suggestedDish = "";
+            var exerciseRoutine = "";
+            
+            if (edad >= 18) {
+                if (imc < 18.5) {
+                    suggestedDish = "Sugerrencias: Consulta a un médico o nutricionista: La opinión y orientación de un profesional de la salud es fundamental para abordar de manera adecuada y segura un bajo índice de masa corporal (IMC). Ellos podrán evaluar tu estado actual y proporcionarte un plan de nutrición y ejercicio personalizado, .";
+                    exerciseRoutine = "Recomendaciones: Incrementa tu consumo de calorías: Si tienes un IMC bajo, es importante asegurarte de consumir suficientes calorías para mantener un peso saludable. Incorpora alimentos ricos en nutrientes y calorías, como grasas saludables (aguacate, aceite de oliva, nueces), carnes magras, pescado, productos lácteos, legumbres y cereales integrales. Come pequeñas comidas frecuentes: En lugar de realizar tres comidas grandes al día, opta por comer varias comidas pequeñas y frecuentes. Esto ayudará a estimular el apetito y a aumentar la ingesta calórica total. Aumenta la ingesta de proteínas: Las proteínas son importantes para construir y reparar tejidos, incluyendo los músculos. Incrementa tu consumo de fuentes de proteína como aves, pescado, carne magra, lácteos, huevos, legumbres y frutos secos. Evita alimentos bajos en nutrientes: Para aumentar de peso de manera saludable, evita alimentos altos en grasas saturadas y azúcares refinados que puedan contribuir a un aumento de peso no deseado. Opta por alimentos nutritivos y densos en calorías, como frutas y verduras, carnes magras y alimentos ricos en fibra. Realiza ejercicio físico regularmente: El ejercicio es importante para ganar peso de manera saludable y aumentar la masa muscular. Opta por ejercicios de fuerza, como levantamiento de pesas, para estimular el crecimiento muscular. Recuerda siempre consultar con un profesional antes de comenzar cualquier rutina de ejercicio.";
+                } else if (imc >= 18.5 && imc < 25) {
+                    suggestedDish = "Sugerencias: Mantente activo: Realizar ejercicio regularmente te ayudará a mantener un peso saludable y fortalecer tu cuerpo. Busca actividades que disfrutes y sean adecuadas para tu nivel de condición física.";
+                    exerciseRoutine = "Recomendaciones: Come alimentos saludables: Elige una dieta balanceada, rica en frutas, verduras, granos enteros, proteínas magras y grasas saludables. Evita los alimentos procesados y altos en grasas saturadas y azúcares añadidos. Controla las porciones: Asegúrate de comer porciones adecuadas y evitar comer en exceso. Escucha a tu cuerpo y come solo cuando tengas hambre, en lugar de comer por aburrimiento o emociones. Bebe suficiente agua: El agua es esencial para mantener un peso saludable y una buena función metabólica. Trata de beber al menos 8 vasos de agua al día y evita las bebidas azucaradas y alcohólicas.Mantén un buen equilibrio emocional: Los hábitos alimenticios y el peso corporal están relacionados con factores emocionales. Aprende a gestionar el estrés, las emociones negativas y evita recurrir a la comida como una forma de consuelo.Consulta a un profesional de la salud: Si te preocupa tu peso o tienes dificultades para mantenerlo en el rango recomendado, busca la ayuda de un médico o nutricionista. Ellos podrán guiarte y ofrecerte consejos personalizados.";
+                } else {
+                    suggestedDish = "Sugerencias: Consulta a un médico: es importante que un profesional de la salud evalúe tu estado de salud y te brinde recomendaciones personalizadas para abordar tu IMC elevado.";
+                    exerciseRoutine = "Recomendaciones: Establece metas realistas: en lugar de buscar cambios drásticos y rápidos, establece metas a largo plazo que sean alcanzables y sostenibles.Mejora tus hábitos alimenticios: incluye más alimentos saludables como frutas, verduras, proteínas magras y granos integrales en tu dieta. Limita el consumo de alimentos procesados, azúcares y grasas saturadas. Controla las porciones: presta atención al tamaño de las porciones y evita comer en exceso. Utiliza platos más pequeños e intenta comer despacio para darle tiempo a tu cuerpo a registrar la sensación de saciedad. Incrementa la actividad física: busca formas de hacer ejercicio regularmente. Comienza con actividades de baja intensidad como caminar, y gradualmente aumenta la intensidad y duración de tus entrenamientos. Bebe suficiente agua: opta por agua en lugar de bebidas azucaradas. El agua ayuda a mantenerte hidratado y puede ayudar a reducir el apetito. Establece una rutina de sueño adecuada: dormir lo suficiente es importante para mantener un metabolismo saludable. Intenta establecer una rutina de sueño regular y busca maneras de mejorar la calidad de tu descanso. Busca apoyo: considera unirte a a grupos de apoyo, contratar a un entrenador personal o trabajar con un nutricionista que pueda guiarte a lo largo de tu proceso de pérdida de peso.";
+                }
+            } else {
+                suggestedDish = "Sugerencias: Debido a tu edad, te sugerimos que mantengas una alimentación equilibrada y adecuada a tus necesidades energéticas. Incorpora actividad física regularmente, incluyendo ejercicios de resistencia para fortalecer los músculos y el sistema óseo.";
+                exerciseRoutine = "Recomendaciones: Consulta a un médico o nutricionista para obtener una evaluación de tu composición corporal y recibir recomendaciones personalizadas. Realiza chequeos médicos regulares para monitorear tu salud general, incluyendo niveles de colesterol, presión arterial, glucosa en sangre, entre otros. Mantén un estilo de vida saludable en general, incluyendo horas adecuadas de sueño, reducción del estrés y evitando hábitos dañinos como el tabaco y el consumo excesivo de alcohol.";
+            }
+            
+            document.getElementById("imcResult").innerHTML = imcResult;
+            document.getElementById("suggestedDish").innerHTML = suggestedDish;
+            document.getElementById("exerciseRoutine").innerHTML = exerciseRoutine;
+            
+            document.getElementById("imcForm").style.display = "none";
+            document.getElementById("resultContainer").style.display = "block";
+        }
+    </script>
+</body>
+</html>

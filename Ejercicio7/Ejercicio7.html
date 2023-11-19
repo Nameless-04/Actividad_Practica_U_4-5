@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Geométrica</title>
+    <script src="script7.js"></script>
+</head>
+<body>
+
+ <style>
+        img {width: 200px;}
+    </style>
+
+
+    <h2>Calculadora Geométrica</h2>
+    <h3>Círculo</h3>
+    <img src="circulo.jpg" alt="Círculo"onmouseover="mostrarFormulas('circulo')" onmouseout="ocultarFormulas('circulo')">
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio">
+    <button onclick="calcularAreaCirculo()">Calcular Área</button>
+    <button onclick="calcularPerimetroCirculo()">Calcular Perímetro</button>
+    <button onclick="calcularVolumenCirculo()">Calcular Volumen</button>
+    <p id="resultadoCirculo"></p>
+    <div id="formulascirculo" style="display: none;">
+    <p>Fórmulas del círculo:</p>
+    <ul>
+        <li><strong>Área:</strong> π * radio^2</li>
+        <li><strong>Perímetro:</strong> 2 * π * radio</li>
+        <li><strong>Volumen:</strong> (4 / 3) * π * radio^3</li>
+    </ul>
+</div>
+
+
+
+  
+    <h3>Triángulo</h3>
+    <img src="triangulo.jpg" alt="Triangulo" onmouseover="mostrarFormulasT('triangulo')" onmouseout="ocultarFormulasT('triangulo')">
+    <label for="base">Base:</label>
+    <input type="number" id="base">
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura">
+    <button onclick="calcularAreaTriangulo()">Calcular Área</button>
+    <button onclick="calcularPerimetroTriangulo()">Calcular Perímetro</button>
+    <button onclick="calcularVolumenTriangulo()">Calcular Volumen</button>
+    <p id="resultadoTriangulo"></p>
+    <div id="formulastriangulo" style="display: none;">
+    <p>Fórmulas del triangolo:</p>
+    <ul>
+        <li><strong>Área:</strong> (base * altura) / 2.</li>
+        <li><strong>Perímetro:</strong> lado1 + lado2 + lado3</li>
+    </ul>
+</div>
+
+    <h3>Cuadrado</h3>
+     <img src="cuadrado.jpg" alt="Cuadrado" onmouseover="mostrarFormulasC('cuadrado')" onmouseout="ocultarFormulasC('cuadrado')">
+    <label for="lado">Lado:</label>
+    <input type="number" id="lado">
+    <button onclick="calcularAreaCuadrado()">Calcular Área</button>
+    <button onclick="calcularPerimetroCuadrado()">Calcular Perímetro</button>
+    <button onclick="calcularVolumenCuadrado()">Calcular Volumen</button>
+    <p id="resultadoCuadrado"></p>
+    <div id="formulascuadrado" style="display: none;">
+    <p>Fórmulas del cuadrado:</p>
+    <ul>
+        <li><strong>Área:</strong>  L²</li>
+        <li><strong>Perímetro:</strong>  4L</li>
+    </ul>
+</div>
+
+    <h3>Trapecio</h3>
+    <img src="trapecio.jpg" alt="Trapecio" onmouseover="mostrarFormulasTr('trapecio')" onmouseout="ocultarFormulasTr('trapecio')">
+    <label for="baseMayor">Base Mayor:</label>
+    <input type="number" id="baseMayor">
+    <label for="baseMenor">Base Menor:</label>
+    <input type="number" id="baseMenor">
+    <label for="alturaTrapecio">Altura:</label>
+    <input type="number" id="alturaTrapecio">
+    <button onclick="calcularAreaTrapecio()">Calcular Área</button>
+    <button onclick="calcularPerimetroTrapecio()">Calcular Perímetro</button>
+    <button onclick="calcularVolumenTrapecio()">Calcular Volumen</button>
+    <p id="resultadoTrapecio"></p>
+    <div id="formulastrapecio" style="display: none;">
+    <p>Fórmulas del trapedio:</p>
+    <ul>
+        <li><strong>Área:</strong>  (base mayor + base menor) * altura / 2 </li>
+        <li><strong>Perímetro:</strong>  lado 1 + lado 2 + lado 3 + lado 4 </li>
+        <li><strong>Volumen:</strong> Área de la base * altura </li>
+    </ul>
+</div>
+
+    <h3>Hexágono</h3>
+     <img src="hexagono.jpg" alt="Hexagono" onmouseover="mostrarFormulasHe('hexagono')" onmouseout="ocultarFormulasHe('hexagono')">
+    <label for="ladoHexagono">Lado:</label>
+    <input type="number" id="ladoHexagono">
+    <button onclick="calcularAreaHexagono()">Calcular Área</button>
+    <button onclick="calcularPerimetroHexagono()">Calcular Perímetro</button>
+    <button onclick="calcularVolumenHexagono()">Calcular Volumen</button>
+    <p id="resultadoHexagono"></p>
+     <div id="formulashexagono" style="display: none;">
+    <p>Fórmulas del hexagono:</p>
+    <ul>
+        <li><strong>Área:</strong>   (3√3 * s^2) / 2 </li>
+        <li><strong>Perímetro:</strong>  6*Lado </li>
+        <li><strong>Volumen:</strong>  Área de la base * Altura </li>
+    </ul>
+</div>
+
+   
+</body>
+</html>

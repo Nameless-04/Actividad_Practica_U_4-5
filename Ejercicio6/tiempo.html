@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Conversion de horas a minutos</title>
+</head>
+<body>
+   <h1>Conversión de Horas a Minutos</h1>
+   <form>
+      <label for="horas">Horas:</label>
+      <input type="number" id="horas" name="horas"><br><br>
+      <input type="button" value="Convertir" onclick="convertirAMinutos()"><br><br>
+      <label for="minutos">Minutos:</label>
+      <input type="text" id="minutos" name="minutos"><br><br>
+   </form>
+
+
+     <script>
+       function convertirAMinutos() {
+         let horas = parseInt(document.getElementById("horas").value);
+         let minutos = horas * 60;
+         document.getElementById("minutos").value = minutos;
+      }
+   </script>
+
+
+</body>
+</html>

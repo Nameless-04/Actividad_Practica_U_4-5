@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <h2>Formulario</h2> 
+    <p>Formulario de HTML que muestra el cálculo de la facturación de un paciente de un hospital.</p>
+    <br>
+    
+        <label for="a1">Nombre del paciente:</label><br>
+        <input type="text" id="nombre"><br><br>
+        <label for="a2">Costo de consulta:</label><br>
+        <input type="int" id="costo"><br><br>
+        <label for="a3">Costo de hospitalizacion por dia:</label><br>
+        <input type="int" id="costodia"><br><br>
+        <label for="a4">Numero de dias en hospital:</label><br>
+        <form>
+        <select id="diash">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        </form><br>
+        <label for="a5">Costos Varios (analisis, cirugias, etc.)</label><br>
+        <input type="int" id="costovarios"><br><br>
+        <label for="a6">Costo de medicamentos:</label><br>
+        <input type="int" id="costomed"><br><br>
+        <label for="a7">Posibles deducciones (medicamentos, costo consulta, hospitalizacion, porcentajes a deducir por cobertura del seguro)</label><br><br>
+    <form id="f2">
+        <input type="radio" name="op" value="3">3%<br>
+        <input type="radio" name="op" value="5">5%<br>
+        <input type="radio" name="op" value="8">8%<br>
+        <input type="radio" name="op" value="12">12%<br><br>
+        <button type="button" onclick="c1()">Calcular</button>
+        <p id="mostrar">Resultado</p>
+    </form>
+    
+</body>
+</html>

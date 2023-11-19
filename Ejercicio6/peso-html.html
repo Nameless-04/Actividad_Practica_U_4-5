@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversión de Peso</title>
+</head>
+<body>
+    <h1>Conversión de Peso</h1>
+    <h3>Kilogramos a Libras</h3>
+    <form>
+        <label for="kilogramos">Kilogramos:</label>
+        <input type="number" id="kilogramos" name="kilogramos">
+        <input type="button" value="Convertir" onclick="convertirKilogramosALibras()">
+        <p id="resultadoLibras"></p>
+    </form>
+    <h3>Libras a Kilogramos</h3>
+    <form>
+        <label for="libras">Libras:</label>
+        <input type="number" id="libras" name="libras">
+        <input type="button" value="Convertir" onclick="convertirLibrasAKilogramos()">
+        <p id="resultadoKilogramos"></p>
+    </form>
+
+    <script>
+        function convertirKilogramosALibras() {
+            var kilogramos = parseFloat(document.getElementById("kilogramos").value);
+            var libras = kilogramos * 2.20462;
+            document.getElementById("resultadoLibras").innerHTML = "Libras: " + libras;
+        }
+
+        function convertirLibrasAKilogramos() {
+            var libras = parseFloat(document.getElementById("libras").value);
+            var kilogramos = libras / 2.20462;
+            document.getElementById("resultadoKilogramos").innerHTML = "Kilogramos: " + kilogramos;
+        }
+    </script>
+</body>
+</html>
